@@ -28,6 +28,7 @@ namespace RssPercolator
             this.Field = field;
         }
 
+        // 如果配置比较麻烦，可以考虑用工厂模式，把创建对象的逻辑封装起来
         /// <summary>
         /// Factory method for creating specific filters.
         /// </summary>

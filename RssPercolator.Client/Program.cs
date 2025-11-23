@@ -161,11 +161,24 @@ namespace RssPercolator.Client
                         Inputs = new []
                         {
                             "https://github.com/StackExchange/dapper-dot-net/commits.atom",
+                            //"https://github.com/JamesNK/Newtonsoft.Json/commits/master.atom",
+                            //"https://github.com/StackExchange/StackExchange.Redis/commits/master.atom",
+                            "https://github.com/olviko/RssPercolator/commits/master.atom"
+                        },
+                        Output = "github_feed1.xml",
+                        Title = "Github - Project releases",
+                        Description = "Aggregated feed of multiple projects"
+                    },
+                    new PipelineSettings
+                    {
+                        Inputs = new []
+                        {
+                            "https://github.com/StackExchange/dapper-dot-net/commits.atom",
                             "https://github.com/JamesNK/Newtonsoft.Json/commits/master.atom",
                             //"https://github.com/StackExchange/StackExchange.Redis/commits/master.atom",
                             "https://github.com/olviko/RssPercolator/commits/master.atom"
                         },
-                        Output = "github_feed.xml",
+                        Output = "github_feed2.xml",
                         Title = "Github - Project releases",
                         Description = "Aggregated feed of multiple projects"
                     }

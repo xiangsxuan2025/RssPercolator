@@ -24,6 +24,7 @@ namespace RssPercolator
         public PercolatorSettings()
         {
             Version = "1.0";
+            // 留了个扩展版本号的空间，以后万一变更可以用得上
         }
 
         /// <summary>
