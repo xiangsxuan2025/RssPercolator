@@ -62,8 +62,8 @@ namespace RssPercolator
                 //DefaultValueHandling = DefaultValueHandling.Ignore,
                 Formatting = Formatting.Indented,
                 ContractResolver = new CamelCasePropertyNamesContractResolver(),
-                Converters = new JsonConverter[] 
-                    { 
+                Converters = new JsonConverter[]
+                    {
                         new StringEnumConverter { CamelCaseText = true }
                     }
             };

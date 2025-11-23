@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace RssPercolator
 {
     /// <summary>
-    /// Filter using wilcards.
-    /// <remarks>This filter is case insensitive.</remarks>
+    /// Filter using wilcards. <remarks>This filter is case insensitive.</remarks>
     /// </summary>
     internal sealed class GlobFilter : Filter
     {

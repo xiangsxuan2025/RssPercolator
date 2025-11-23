@@ -15,10 +15,12 @@ namespace RssPercolator
         /// Skip filter.
         /// </summary>
         None = 0,
+
         /// <summary>
         /// Include item into results.
         /// </summary>
         Include = 1,
+
         /// <summary>
         /// Exclude item from results.
         /// </summary>

@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace RssPercolator.Client
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             //string settingsFile = "";
             //github.SaveToFile(settingsFile);
@@ -43,17 +43,16 @@ namespace RssPercolator.Client
             }
         }
 
-
         private static PercolatorSettings CraigslistBikes()
         {
             var pipelineSettings = new PercolatorSettings
             {
                 Pipelines = new[]
-                { 
+                {
                     new PipelineSettings
                     {
                         Inputs = new []
-                        { 
+                        {
                             "http://miami.craigslist.org/search/pbc/bik?format=rss"
                         },
 
@@ -72,14 +71,14 @@ namespace RssPercolator.Client
                         PatternType = PatternType.Glob,
                         Patterns = new [] { "*" }
                     },
-                    
+
                     // Only include posts with the following keywords
                     new FilterSettings
                     {
                         Action = FilterAction.Include,
                         Field = FeedField.Title,
                         PatternType = PatternType.String,
-                        Patterns = new [] 
+                        Patterns = new []
                         {
                             "cannondale","trek","giant","specialized"
                         }
@@ -95,11 +94,11 @@ namespace RssPercolator.Client
             var pipelineSettings = new PercolatorSettings
             {
                 Pipelines = new[]
-                { 
+                {
                     new PipelineSettings
                     {
                         Inputs = new []
-                        { 
+                        {
                             "http://rss.indeed.com/rss?q=machine+learning&l=San+Fransisco%2C+CA&sort=date",
                             "http://rss.indeed.com/rss?q=data+mining&l=San+Fransisco%2C+CA&sort=date",
                         },
@@ -119,16 +118,16 @@ namespace RssPercolator.Client
                         PatternType = PatternType.Glob,
                         Patterns = new [] { "*" }
                     },
-                    
+
                     // Only include posts with the following keywords
                     new FilterSettings
                     {
                         Action = FilterAction.Include,
                         Field = FeedField.Any,
                         PatternType = PatternType.String,
-                        Patterns = new [] 
-                        { 
-                            ".net","sql","c#","java","python","data mining","machine learning" 
+                        Patterns = new []
+                        {
+                            ".net","sql","c#","java","python","data mining","machine learning"
                         }
                     },
 
@@ -138,12 +137,11 @@ namespace RssPercolator.Client
                         Action = FilterAction.Exclude,
                         Field = FeedField.Title,
                         PatternType = PatternType.String,
-                        Patterns = new [] 
-                        { 
+                        Patterns = new []
+                        {
                             "associate","clerk","webmaster","specialist","sales","insurance","junior","entry","jr.","intern"
                         }
                     },
-
                 }
             };
 
@@ -155,11 +153,11 @@ namespace RssPercolator.Client
             var pipelineSettings = new PercolatorSettings
             {
                 Pipelines = new[]
-                { 
+                {
                     new PipelineSettings
                     {
                         Inputs = new []
-                        { 
+                        {
                             "https://github.com/StackExchange/dapper-dot-net/commits.atom",
                             "https://github.com/JamesNK/Newtonsoft.Json/commits/master.atom",
                             "https://github.com/StackExchange/StackExchange.Redis/commits/master.atom",
@@ -180,15 +178,15 @@ namespace RssPercolator.Client
                         PatternType = PatternType.Glob,
                         Patterns = new [] { "*" }
                     },
-                
+
                     // Include activity related to the specific project
                     new FilterSettings
                     {
                         Action = FilterAction.Include,
                         Field = FeedField.Any,
                         PatternType = PatternType.String,
-                        Patterns = new [] 
-                        { 
+                        Patterns = new []
+                        {
                             "Release", "Version"
                         }
                     }
@@ -197,6 +195,5 @@ namespace RssPercolator.Client
 
             return pipelineSettings;
         }
-
     }
 }

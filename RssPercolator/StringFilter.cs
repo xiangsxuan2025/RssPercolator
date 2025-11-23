@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 namespace RssPercolator
 {
     /// <summary>
-    /// Filter using exact match.
-    /// <remarks>This filter is case insensitive.</remarks>
+    /// Filter using exact match. <remarks>This filter is case insensitive.</remarks>
     /// </summary>
     internal sealed class StringFilter : Filter
     {

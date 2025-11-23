@@ -8,8 +8,7 @@ using System.Threading.Tasks;
 namespace RssPercolator
 {
     /// <summary>
-    /// Filter using regular expressions.
-    /// <remarks>This filter is case insensitive.</remarks>
+    /// Filter using regular expressions. <remarks>This filter is case insensitive.</remarks>
     /// </summary>
     internal sealed class RegexFilter : Filter
     {

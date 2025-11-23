@@ -90,6 +90,5 @@ namespace RssPercolator
 
             goto test_match;
         }
-
     }
 }

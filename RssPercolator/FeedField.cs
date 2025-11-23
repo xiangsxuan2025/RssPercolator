@@ -15,10 +15,12 @@ namespace RssPercolator
         /// Apply filter to all available fields.
         /// </summary>
         Any = 0,
+
         /// <summary>
         /// Apply filter to a title.
         /// </summary>
         Title = 1,
+
         /// <summary>
         /// Apply filter to a description.
         /// </summary>

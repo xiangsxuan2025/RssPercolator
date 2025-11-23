@@ -36,8 +36,8 @@ namespace RssPercolator
 
             // process <channel>
 
-            reader.ReadStartElement("channel"); // <channel>   
-            while (reader.IsStartElement())         
+            reader.ReadStartElement("channel"); // <channel>
+            while (reader.IsStartElement())
             {
                 if (reader.IsStartElement("title"))
                     Feed.Title = new TextSyndicationContent(reader.ReadElementString());
@@ -52,7 +52,7 @@ namespace RssPercolator
                 else
                     reader.Skip();
             }
-            reader.ReadEndElement(); // </channel>   
+            reader.ReadEndElement(); // </channel>
 
             while (reader.IsStartElement())
             {
@@ -97,8 +97,8 @@ namespace RssPercolator
             throw new NotImplementedException();
         }
 
-        const string rdfNs = "http://www.w3.org/1999/02/22-rdf-syntax-ns#";
-        const string dcNs = "http://purl.org/dc/elements/1.1/";
-        const string synNs = "http://purl.org/rss/1.0/modules/syndication/";
+        private const string rdfNs = "http://www.w3.org/1999/02/22-rdf-syntax-ns#";
+        private const string dcNs = "http://purl.org/dc/elements/1.1/";
+        private const string synNs = "http://purl.org/rss/1.0/modules/syndication/";
     }
 }

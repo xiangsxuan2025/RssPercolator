@@ -11,11 +11,8 @@ using System.IO;
 namespace RssPercolator
 {
     /// <summary>
-    /// Executes a pipeline.
-    /// <remarks>
-    /// Filters are always executed in a sequence from top to bottom. Make sure to put broad filters 
-    /// in the beginning.
-    /// </remarks>
+    /// Executes a pipeline. <remarks> Filters are always executed in a sequence from top to bottom.
+    /// Make sure to put broad filters in the beginning. </remarks>
     /// </summary>
     public sealed class PipelineEvaluator : IPipelineEvaluator
     {
@@ -37,8 +34,8 @@ namespace RssPercolator
             {
                 // Get a list of feed items
                 items = from feed in ParallelCrawl(pipelineSettings.Inputs)
-                                                        from i in feed.Items
-                                                        select i;
+                        from i in feed.Items
+                        select i;
             }
             else
             {
