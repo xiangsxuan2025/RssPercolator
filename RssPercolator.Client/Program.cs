@@ -19,9 +19,11 @@ namespace RssPercolator.Client
             PercolatorSettings github = GitHub();
             PercolatorSettings jobs = JobOpenings();
 
-            Percolate(bikes);
+            // 这两个网站, 我都访问不了,报错后直接崩溃,
+            // 这凸显了管道设计的弊端: 缺乏容错能力,一旦某个源不可用,整个管道就会失败.
+            //Percolate(bikes);
             Percolate(github);
-            Percolate(jobs);
+            //Percolate(jobs);
         }
 
         private static void Percolate(PercolatorSettings percolatorSettings)
@@ -160,7 +162,7 @@ namespace RssPercolator.Client
                         {
                             "https://github.com/StackExchange/dapper-dot-net/commits.atom",
                             "https://github.com/JamesNK/Newtonsoft.Json/commits/master.atom",
-                            "https://github.com/StackExchange/StackExchange.Redis/commits/master.atom",
+                            //"https://github.com/StackExchange/StackExchange.Redis/commits/master.atom",
                             "https://github.com/olviko/RssPercolator/commits/master.atom"
                         },
                         Output = "github_feed.xml",
@@ -185,9 +187,11 @@ namespace RssPercolator.Client
                         Action = FilterAction.Include,
                         Field = FeedField.Any,
                         PatternType = PatternType.String,
-                        Patterns = new []
+                        Patterns = new[]
                         {
-                            "Release", "Version"
+                            "update",
+                            // 都没包含这两个关键字
+                            //"Release", "Version"
                         }
                     }
                 }
